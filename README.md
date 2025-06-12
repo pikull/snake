@@ -9,4 +9,4 @@
 
 ## new features to add
 
-- none (yet)
+- display score at end of game
