@@ -42,7 +42,7 @@ def main():
         apple.draw(screen)
 
         pg.display.update()
-        clock.tick(10)
+        clock.tick(frame_rate)
 
     pg.quit()
 
