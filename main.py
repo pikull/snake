@@ -1,4 +1,5 @@
 import pygame as pg
+import time as t
 
 from apple import Apple
 from constants import *

@@ -1,5 +1,4 @@
 import pygame as pg
-import time as t
 
 from constants import *
 
