@@ -1,6 +1,13 @@
-## about<br>
+## about
 
 **snake game in python**<br>
+
+## how to play
+
+**important**<br>
+make sure you have pygame installed through pip<br>
+then run main.py file :)<br><br>
+wasd or arrows to move<br>
 
 ## current issues
 
