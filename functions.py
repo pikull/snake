@@ -34,5 +34,17 @@ def game_over(surface):
     surface.blit(text, center)
 
     pg.display.update()
-    t.sleep(6)
     
+def direction(snake, key):
+    if snake.ydir != 1 and (key == pg.K_UP or key == pg.K_w):
+        snake.xdir = 0
+        snake.ydir = -1
+    elif snake.ydir != -1 and (key == pg.K_DOWN or key == pg.K_s):
+        snake.xdir = 0
+        snake.ydir = 1
+    elif snake.xdir != 1 and (key == pg.K_LEFT or key == pg.K_a):
+        snake.xdir = -1
+        snake.ydir = 0
+    elif snake.xdir != -1 and (key == pg.K_RIGHT or key == pg.K_d):
+        snake.xdir = 1
+        snake.ydir = 0
