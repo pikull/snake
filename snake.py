@@ -19,12 +19,25 @@ class Snake:
         xpos, ypos = self.body[0].x / block_size, self.body[0].y / block_size
         if not (0 <= xpos < grid_size and 0 <= ypos < grid_size):
             self.dead = True
+            return
 
         # self collision
         head = self.body[0]
         for i in range(1, len(self.body) - 1):
-            if head.x == self.body[i].x and head.y == self.body[i].y:
+            if head.colliderect(self.body[i]):
                 self.dead = True
+                return
+
+        # snake movement
+        new_head_x = self.body[0].x + self.xdir * block_size
+        new_head_y = self.body[0].y + self.ydir * block_size
+        new_head = pg.Rect(new_head_x, new_head_y, block_size, block_size)
+        self.body.insert(0, new_head)
+        if self.grow:
+            self.grow = False
+        else:
+            self.body.pop()
+
 
     def draw(self, surface):
         for square in self.body:

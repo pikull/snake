@@ -23,14 +23,19 @@ def main():
             if event.type == pg.QUIT:
                 running = False
 
+        if snake.body[0].colliderect(apple.rect):
+            snake.grow = True
+
+        snake.update()
+
         if snake.dead:
             game_over(screen)
             running = False
             break
 
         draw_grid(screen)
-        apple.draw(screen)
         snake.draw(screen)
+        apple.draw(screen)
 
         pg.display.update()
         clock.tick(10)
