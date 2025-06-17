@@ -1,5 +1,6 @@
-import pygame as pg
 import time as t
+
+import pygame as pg
 
 from apple import Apple
 from constants import *
@@ -43,7 +44,7 @@ def main():
         apple.draw(screen)
 
         pg.display.update()
-        clock.tick(frame_rate)
+        clock.tick(tick_speed)
 
     pg.quit()
 
