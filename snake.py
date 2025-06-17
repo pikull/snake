@@ -5,7 +5,8 @@ from constants import *
 
 class Snake:
     def __init__(self):
-        self.xdir, self.ydir = 1, 0
+        self.tobexdir, self.tobeydir = 1, 0
+        self.xdir, self.ydir = 0, 0
         self.body = [
             pg.Rect(block_size * 2, block_size, block_size, block_size),
             pg.Rect(block_size, block_size, block_size, block_size),
@@ -27,6 +28,10 @@ class Snake:
             if head.colliderect(self.body[i]):
                 self.dead = True
                 return
+        
+        # snake direction
+        self.xdir = self.tobexdir
+        self.ydir = self.tobeydir
 
         # snake movement
         new_head_x = self.body[0].x + self.xdir * block_size

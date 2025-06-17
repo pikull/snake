@@ -19,6 +19,7 @@ def draw_grid(surface):
             ((i + 1) * block_size, screen_size),
         )
 
+
 def game_over(surface):
     surface.fill("black")
 
@@ -33,17 +34,18 @@ def game_over(surface):
     surface.blit(text, center)
 
     pg.display.update()
-    
+
+
 def direction(snake, key):
     if snake.ydir != 1 and (key == pg.K_UP or key == pg.K_w):
-        snake.xdir = 0
-        snake.ydir = -1
+        snake.tobexdir = 0
+        snake.tobeydir = -1
     elif snake.ydir != -1 and (key == pg.K_DOWN or key == pg.K_s):
-        snake.xdir = 0
-        snake.ydir = 1
+        snake.tobexdir = 0
+        snake.tobeydir = 1
     elif snake.xdir != 1 and (key == pg.K_LEFT or key == pg.K_a):
-        snake.xdir = -1
-        snake.ydir = 0
+        snake.tobexdir = -1
+        snake.tobeydir = 0
     elif snake.xdir != -1 and (key == pg.K_RIGHT or key == pg.K_d):
-        snake.xdir = 1
-        snake.ydir = 0
+        snake.tobexdir = 1
+        snake.tobeydir = 0
