@@ -18,3 +18,4 @@ wasd or arrows to move<br>
 ## new features to add
 
 - display score at end of game
+- dynamic difficulty: game ticks faster as snake length increases
